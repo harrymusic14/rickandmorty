@@ -13,9 +13,10 @@ export function useFetchApi () {
             const res = await axios.get(url)
             setData(res.data)
         } catch (error){
-            setError(error.response?.data?.message || error.message)
+            console.error(error)
+            setError(error.response?.data?.message || error.    message)
         } finally {
-            setLoading(false)   
+            setLoading(false)
         }
     }
 

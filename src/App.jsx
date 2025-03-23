@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
 import {useFetchApi} from "./hooks/useFetchApi"
+import ResidentsList from './components/ResidentsList'
 
 const baseUrl = "https://rickandmortyapi.com/api/location"
 
 function App() {
-  const {data: location, request} = useFetchApi()
+  const {data: location, request, loading } = useFetchApi()
   const [locationId, setLocationId] = useState('3')
 
   useEffect(() => {
@@ -20,28 +21,12 @@ function App() {
       <div className="search"></div>
       
       {/* LocationInfo */}
-      {location && (
-        <div className="location">
-        <h2>{location.nam}</h2>
-        <ul>
-          <li><span>Type:</span>{location.type}</li>
-          <li><span>Dimension:</span>{location.dimension}</li>
-          <li>
-            <span>Population:</span>{' '}
-            {location.residents?.length}{' '}
-            {location.residents?.length === 1 ? 'Resident' : 'Residents'}
-          </li>
-        </ul>
-
-        </div>
+      {loading ? <p>Cargando...</p> : location && (
+        location && <LocationInfo location={location} />      
       )}
-      
-      <pre>
-        {JSON.stringify(location, null, 2)}
-      </pre>
 
       {/* ResidentsList */}
-      <div className="residents"></div>
+      {location && <ResidentsList residents={location.residents} />}
     </div>
   ) 
 }
