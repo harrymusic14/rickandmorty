@@ -1,4 +1,5 @@
 import ResidentCard from './ResidentCard'
+import './ResidentsList.css'
 
 function ResidentsList({residents}) {
     console.log(residents)

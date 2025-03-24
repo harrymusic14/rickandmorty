@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react"
 import {useFetchApi} from "./hooks/useFetchApi"
+import {getRamdomNumber} from './utils'
+import Hero from './components/Hero'
+import Search from "./components/Search"
+import LocationInfo from "./components/LocationInfo"
 import ResidentsList from './components/ResidentsList'
 
 const baseUrl = "https://rickandmortyapi.com/api/location"
 
 function App() {
   const {data: location, request, loading } = useFetchApi()
-  const [locationId, setLocationId] = useState('3')
+  const [locationId, setLocationId] = useState(getRamdomNumber())
 
   useEffect(() => {
     request(`${baseUrl}/${locationId}`)
@@ -15,13 +19,13 @@ function App() {
   return (
     <div>
       {/* Hero */}
-      <div className="hero"></div>
+      <Hero/>
 
       {/* Search */}
-      <div className="search"></div>
+      <Search setLocationId={setLocationId}/>  
       
       {/* LocationInfo */}
-      {loading ? <p>Cargando...</p> : location && (
+      {loading ? <p>Cargando...</p> : (
         location && <LocationInfo location={location} />      
       )}
 

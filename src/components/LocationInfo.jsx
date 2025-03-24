@@ -1,3 +1,5 @@
+import './LocationInfo.css'
+
 function LocationInfo({location}) {
   const length = location.residents?.length
 
@@ -8,7 +10,7 @@ function LocationInfo({location}) {
             <li><span>type:</span>{location.type}</li>
             <li><span>Dimension:</span>{location.dimension}</li>
             <li>
-                <span>Population:</span>{length}{length === 1 ? 'Resident' : 'Residents'}
+              <span>Population:</span> {length} {length === 1 ? 'Resident' : 'Residents'}
             </li>
         </ul>
     </div>
