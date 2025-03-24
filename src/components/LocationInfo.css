@@ -1,3 +1,40 @@
 .location {
-    border: 1px solid red  
+    border: 1px solid red;
+    display: grid;
+    place-content: center;
+}
+
+.location__container {
+    max-width: 600px;
+    min-width: 300px;
+    width: 100%;
+    border: 1px solid green;
+    padding: 2em;
+    border-radius: 15px;
+    box-shadow: 5px 5px;
+}
+
+.location__name{
+    color: #70a925;
+    text-align: center;
+}
+
+.location__info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem
+}
+
+.location__info {
+    color: #999;
+    text-align: center;
+}
+
+.location__span {
+    display: block;
+    color: #000;
+    font-weight: 700;
 }

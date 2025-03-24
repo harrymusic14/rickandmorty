@@ -5,14 +5,17 @@ function LocationInfo({location}) {
 
   return (
     <div className="location">
-        <h2>{location.name}</h2>
-        <ul>
-            <li><span>type:</span>{location.type}</li>
-            <li><span>Dimension:</span>{location.dimension}</li>
-            <li>
-              <span>Population:</span> {length} {length === 1 ? 'Resident' : 'Residents'}
+        <div className='location__container'>
+        <h2 className='location__name'>{location.name}</h2>
+        <ul className='location__info'>
+            <li className='location__item'><span className='location__span'>type:</span>{location.type}</li>
+            <li className='location__item'><span className='location__span'>Dimension:</span>{location.dimension}</li>
+            <li className='location__item'>
+              <span className='location__span'>Population:</span> {length} {length === 1 ? 'Resident' : 'Residents'}
             </li>
         </ul>
+        
+        </div>      
     </div>
     )
   }
