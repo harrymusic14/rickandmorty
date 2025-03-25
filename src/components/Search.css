@@ -1,5 +1,4 @@
 .search {
-    border: 1px solid red;
     padding: 2.5em 1em;
     display: grid;
     place-content: center;
@@ -26,4 +25,10 @@
     border-radius: 0 8px 8px 0;
     padding: .5em 1em;
     outline: none;
+}
+
+.search__error {
+    color: rgb(221, 26, 26);
+    font-size: small;
+    text-align: center;
 }

@@ -1,8 +1,7 @@
 .resident-card {
-    border: 1px solid red;
-    margin-bottom: 20px;
     border-radius: 15px;
     overflow: hidden;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .resident__header {
@@ -13,14 +12,14 @@
 
 .resident__img {
     width: 100%;
-    height: 400px;
+    height: 100%;
     object-fit: cover;
 }
 
 .resident__status {
     position: absolute;
     top: 2em;
-    left: 2em;
+    left: 0;
     background-color: #fff;
     padding: 0.5em 1em;
     border-radius: 0 8px 8px 0;

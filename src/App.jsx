@@ -25,7 +25,7 @@ function App() {
       <Search setLocationId={setLocationId}/>  
       
       {/* LocationInfo */}
-      {loading ? <p>Cargando...</p> : (
+      {loading ? <p style={{textAlign: 'center'}}>Cargando...</p> : (
         location && <LocationInfo location={location} />      
       )}
 
